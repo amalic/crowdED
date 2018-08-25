@@ -2,11 +2,12 @@ FROM jupyter/datascience-notebook:latest
 
 #USER root
 
-WORKDIR /app
+RUN pip install --upgrade pip
 
-RUN pip install --upgrade pip && \
-  pip3 install crowdED shortuuid pycm
+WORKDIR /app
 
 COPY . .
 
-CMD ["bash"]
+RUN pip3 install -r requirements.txt
+
+CMD ["python", "create_crowdED.py"]

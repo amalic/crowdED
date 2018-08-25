@@ -14,7 +14,14 @@ CrowdED: Guideline for designing optimal crowdsourcing experiments
 
 2) Install crowdED
 
-        pip install crowdED
+        pip install -r requirements.txt
+        
+## Docker
+A dockerfile for test data generation has been created. You can build and run it as follows
+```
+docker build -t create_crowded .
+docker run -d --rm -v <local path to output directory>:/data create_crowded
+```
 
 ## Preliminary Results
 ![](reports/Fig1.png)
